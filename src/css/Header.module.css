@@ -32,6 +32,9 @@
 
 .header {
 	display: initial;
+	position: sticky;
+	z-index: 1;
+
 }
 .name {
 	color: #0f2740;
