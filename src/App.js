@@ -1,5 +1,6 @@
 import Header from "./components/UI/Header";
 import About from "./pages/About";
+import Footer from "./components/UI/Footer";
 
 const App = () => {
 	return (
@@ -8,6 +9,7 @@ const App = () => {
 			<main>
 				<About />
 			</main>
+			<Footer/>
 		</>
 	);
 };

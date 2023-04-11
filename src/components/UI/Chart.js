@@ -50,7 +50,7 @@ const Chart = () => {
 	));
 
 	return (
-		<div ref={ref} id="chart" className="chart avenir mw9 center mt5">
+		<div ref={ref} id="chart" className="chart avenir mw8 center mt5">
 			{[...dataPoints]}
 		</div>
 	);
