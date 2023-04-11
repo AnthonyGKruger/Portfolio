@@ -1,7 +1,7 @@
 import { useIsVisible } from "../../hooks/UseIsVisible";
 import { useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import "./Chart.css";
+import "./../../css/Chart.css";
 import ChartBar from "./ChartBar";
 
 const Chart = () => {
@@ -9,9 +9,11 @@ const Chart = () => {
 	const isVisible = useIsVisible(ref);
 	const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
+	const jsLabel =  isMobile ? "JS" : "JavaScript";
+
 	const [skills, setSkills] = useState([
 		{ label: "React", value: 0 },
-		{ label: "JS", value: 0 },
+		{ label:jsLabel, value: 0 },
 		{ label: "HTML", value: 0 },
 		{ label: "CSS", value: 0 },
 		{ label: "PHP", value: 0 },
@@ -19,12 +21,12 @@ const Chart = () => {
 		{ label: "Java", value: 0 },
 		{ label: "Python", value: 0 },
 	]);
-
+	
 	if (isVisible) {
 		setTimeout(() => {
 			setSkills([
 				{ label: "React", value: 65 },
-				{ label: isMobile ? "JS" : "JavaScript", value: 60 },
+				{ label: jsLabel, value: 60 },
 				{ label: "HTML", value: 40 },
 				{ label: "CSS", value: 30 },
 				{ label: "PHP", value: 45 },
@@ -48,7 +50,7 @@ const Chart = () => {
 	));
 
 	return (
-		<div ref={ref} id="chart" className="chart avenir mw9 center mt5">
+		<div ref={ref} id="chart" className="chart avenir mw8 center mt5">
 			{[...dataPoints]}
 		</div>
 	);

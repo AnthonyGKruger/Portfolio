@@ -1,10 +1,47 @@
-import classes from "./../../css/Heading.module.css"
+import { useMediaQuery } from "react-responsive";
+import Lottie from "react-lottie";
+import classes from "./../../css/Heading.module.css";
 
 const Heading = (props) => {
-	return (
-		<div className={`bt bb tc mw8 center mt4 bg-white ${classes.headingBorder}`}>
-			<h2 className={`f2 tc ${classes.headingText}`}>{props.content}</h2>
+	const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+
+	const defaultOptions = {
+		loop: true,
+		autoplay: true,
+		animationData: props.lottieData,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice",
+		},
+	};
+
+	const mobileContent = (
+		<>
+			<div className={`fl w-30 w-50-ns`}>
+				<Lottie height={100} width={100} options={defaultOptions} />
+			</div>
+			<div className={`fl w-50 w-50-ns f3 ${classes.headingText}`}>
+				<h2>{props.content}</h2>
+			</div>
+		</>
+	);
+
+	const desktopContent = (
+		<div className="w-20 center ">
+			<div className={`fl w-50 w-50-ns`}>
+				<Lottie height={100} width={100} options={defaultOptions} />
+			</div>
+			<div className={`fl w-50 w-50-ns f3  ${classes.headingText}`}>
+				<h2>{props.content}</h2>
+			</div>
 		</div>
+	);
+
+	return (
+		<article
+			className={`ml-50 w-100 cf avenir tc bt bb tc mw8 center mt4 bg-white pa3 ${classes.headingBorder} `}
+		>
+			{isMobile ? mobileContent : desktopContent}
+		</article>
 	);
 };
 

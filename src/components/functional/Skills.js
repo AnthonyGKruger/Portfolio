@@ -1,10 +1,11 @@
 import Heading from "../UI/Heading";
 import Chart from "../UI/Chart";
+import lottieData from "../../lotties/Skill.json"
 
 const Skills = () => {
 	return (
 		<>
-			<Heading content="Skills" />
+			<Heading lottieData={lottieData} content="Skills" />
 			<Chart />
 		</>
 	);
