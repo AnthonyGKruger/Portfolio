@@ -26,7 +26,7 @@ const Languages = () => {
 							width={100}
 							options={{
 								...defaultOptions,
-								loop: false,
+								loop: true,
 								animationData: englishLottieData,
 							}}
 						/>
