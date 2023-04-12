@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "./../../media/ezdev-logo.png";
 import classes from "./../../css/Header.module.css";
 
@@ -6,7 +7,7 @@ const Header = () => {
 
 	return (
 		<>
-			<a href="/#title" className={classes.image}>
+			<Link to="/" className={classes.image}>
 				<img
 					// className={"flex-auto "}
 					src={logo}
@@ -14,7 +15,7 @@ const Header = () => {
 					height={100}
 					layout="filled"
 				/>
-			</a>
+			</Link>
 			<header className={"bg-white black-80 tc pv1 avenir " + classes.header}>
 				<h1 className={`${classes.name} +  mt2 mb0 fw1 f1`}>
 					Anthony Gordon Kruger
@@ -23,25 +24,15 @@ const Header = () => {
 					Software developer and tech enthusiast
 				</h2>
 				<nav className={"bt bb tc mw8 center mt4 bg-white " + classes.nav}>
-					<a className={linkClasses} href="/#about">
+					<Link className={linkClasses} to="/">
 						About
-					</a>
-					{/* <a className={linkClasses} href="/#title">
-						Home
-					</a> */}
-					<a className={linkClasses} href="/#portfolio">
+					</Link>
+					<Link className={linkClasses} to="/portfolio">
 						Portfolio
-					</a>
-					{/* <a
-						className={linkClasses}
-						href="./../CV/AnthonyGordonKruger.pdf"
-						target="_blank"
-					>
-						CV
-					</a> */}
-					<a className={linkClasses} href="/#contact">
+					</Link>
+					<Link className={linkClasses} to="/contact-me">
 						Contact
-					</a>
+					</Link>
 				</nav>
 			</header>
 		</>

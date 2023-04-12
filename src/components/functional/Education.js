@@ -28,7 +28,7 @@ const educationData = [
 	// 	comments: [],
 	// },
 ];
-
+ 
 const mappedEducation = educationData.map((qualification) => {
 	return <EducationItem
 		key={qualification.id}

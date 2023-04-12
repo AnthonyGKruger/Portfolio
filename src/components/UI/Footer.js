@@ -1,87 +1,62 @@
+import logo from "./../../media/ezdev-logo.png";
+import classes from "./../../css/Footer.module.css";
+
 const Footer = () => {
 	return (
-		<footer class="pa4 pa5-l black-70 bt b--black-10">
+		<footer class="pa4 pa5-l black-70 bt b--black-10 avenir">
 			<div class="mb4-l cf">
-				<h1 class="fl w-100 pv0 f6 fw6 ttu tracked mb4">Studios</h1>
-				<article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
-					<h4 class="f5 f4-l fw6">SF</h4>
-					<span class="f7 f6-l db black-70">837 Larkin St.</span>
-					<span class="f7 f6-l black-70">San Francisco, CA 94109 </span>
-					<a
-						class="f6 db fw6 pv3 black-70 link dim"
-						title="Call SF"
-						href="tel:+12075555555"
-					>
-						+1 207-555-5555
-					</a>
-				</article>
-				<article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pl2 pl0-ns">
-					<h4 class="f5 f4-l fw6">LA</h4>
-					<span class="f7 f6-l db black-70">1111 Manor Way</span>
-					<span class="f7 f6-l di black-70">Los Angeles, CA 90048</span>
-					<a
-						href="tel:+13235555555"
-						class="f6 db fw6 pv3 link dim black-70"
-						title="Call the LA office."
-					>
-						+1 323-555-5555
-					</a>
-				</article>
-				<article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
-					<h4 class="f5 f4-l fw6">London</h4>
-					<span class="f7 f6-l db black-70">11 Downey St.</span>
-					<span class="f7 f6-l black-70">London, UK</span>
-					<a
-						href="tel:+5555555555"
-						class="link dim f6 db fw6 pv3 black-70"
-						title="Call the London office"
-					>
-						+44 0 5555-5555
-					</a>
-				</article>
-				<article class="fl w-50 dib-ns w-auto-ns mb4 pl2 pl0-ns">
-					<h4 class="f5 f4-l fw6">Tokyo</h4>
-					<span class="f7 f6-l db black-70">1982 Flangan Rd.</span>
-					<span class="f7 f6-l">Shinjuku, Tokyo</span>
-					<a
-						href="tel:+444444444444"
-						class="f6 db dim fw6 pv3 link black-70"
-						title="Call Tokyo Office"
-					>
-						+99 5555-5555
-					</a>
-				</article>
+				<a href="/#title" className={classes.image}>
+					<img
+						src={logo}
+						alt="ez-dev logo"
+						height={100}
+						layout="filled"
+					/>
+				</a>
+				<h1 className={`${classes.name} + tc mt2 mb0 fw1 f1`}>
+					Anthony Gordon Kruger
+				</h1>
 			</div>
-			<section class="cf mb5">
-				<div class="mb4 mb0-ns w-100 w-50-l fr">
+
+			<section class={`cf tc mb5`}>
+				<div class="mb4 mb0-ns w-100 fr">
 					<a
-						class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l"
-						href="mailto:hello@impossible.com"
+						class={`black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l ${classes.email}`}
+						href="mailto:hello@ezdev.solutions"
 					>
-						hello@yourcompany.com
+						hello@ezdev.solutions
 					</a>
 				</div>
-				<div class="mb4 mb0-ns fl w-100 w-50-l">
-					<p class="f4 fw6 mb2 f6 mt0">Sign up for our newsletter.</p>
-					<input
-						placeholder="Email Address"
-						class="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph4 border-box"
-					/>
-					<input
-						type="submit"
-						class="input-reset w-100 w-auto-ns bg-black-80 white f5 pv2 pv3-ns ph4 ba b--black-80 bg-hover-mid-gray"
-					/>
-				</div>
+	
 			</section>
 			<div class="dt dt--fixed w-100">
 				<div class="dn dtc-ns v-mid">
-					<p class="f7 black-70 dib pr3 mb3">Copyright © Your Company 2048</p>
+					<p class="f7 black-70 dib pr3 mb3">
+						© EZdev Solutions (PTY) LTD 2023
+					</p>
 				</div>
 				<div class="db dtc-ns black-70 tc tr-ns v-mid">
 					<a
+						class="link near-black hover-silver dib h2 w2 mr3"
+						href="https://github.com/AnthonyGKruger"
+						title="GitHub"
+					>
+						<svg
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 16 16"
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							stroke-linejoin="round"
+							stroke-miterlimit="1.414"
+						>
+							<path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8" />
+						</svg>
+					</a>
+					<a
 						href="https://www.facebook.com/"
 						class="link dim dib mr3 black-70"
-						title="Impossible Labs on Facebook"
+						title="EZdev on Facebook"
 					>
 						<svg
 							class="db w2 h2"
@@ -93,50 +68,7 @@ const Footer = () => {
 							<path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"></path>
 						</svg>
 					</a>
-					<a href="https://twitter.com/" class="link dim dib mr3 black-70">
-						<svg
-							class="db w2 h2"
-							data-icon="twitter"
-							viewBox="0 0 32 32"
-							fill="currentColor"
-						>
-							<title>twitter icon</title>
-							<path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"></path>
-						</svg>
-					</a>
-					<a
-						href="https://medium.com/"
-						class="link dim dib mr3 black-70"
-						title="Impossible Labs on Medium"
-					>
-						<svg
-							class="db w2 h2"
-							x="0px"
-							y="0px"
-							viewBox="0 0 290 248.6"
-							fill="currentColor"
-						>
-							<g>
-								<path
-									fill="currentColor"
-									class="st0"
-									d="M287.8,46.3L196,0.3c-0.4-0.2-0.9-0.3-1.3-0.3c0,0-0.1,0-0.1,0c-1.1,0-2.2,0.6-2.8,1.5l-56.6,92l63.2,102.7 l90.4-146.9C289.4,48.3,289,46.8,287.8,46.3z"
-								></path>
-								<polygon
-									fill="currentColor"
-									points="105.2,61.2 105.2,160.3 193.3,204.4 	"
-								></polygon>
-								<path
-									fill="currentColor"
-									d="M201,208.2l80.9,40.5c4.4,2.2,8,0,8-5v-180L201,208.2z"
-								></path>
-								<path
-									fill="currentColor"
-									d="M95.5,46.7L10.7,4.3L5.4,1.7C4.6,1.3,3.8,1.1,3.2,1.1c-0.9,0-1.7,0.4-2.3,1.1C0.3,2.8,0,3.8,0,5v193.4 c0,3.3,2.4,7.2,5.4,8.7l83.3,41.6c1.2,0.6,2.3,0.9,3.3,0.9c2.8,0,4.8-2.2,4.8-5.8V48.7C96.7,47.8,96.2,47.1,95.5,46.7z"
-								></path>
-							</g>
-						</svg>
-					</a>
+
 					<a
 						href="https://www.linkedin.com/company/"
 						class="link dim dib black-70"
@@ -167,9 +99,6 @@ const Footer = () => {
 						</svg>
 					</a>
 				</div>
-			</div>
-			<div class="db dn-ns">
-				<p class="f7 black-70 mt4 tc">Copyright © Your Company 2038</p>
 			</div>
 		</footer>
 	);

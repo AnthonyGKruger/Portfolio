@@ -1,39 +1,7 @@
-.color-primary-0 {
-	color: #354f6b;
-} /* Main Primary color */
-.color-primary-1 {
-	color: #76899d;
-}
-.color-primary-2 {
-	color: #4f6781;
-}
-.color-primary-3 {
-	color: #213c58;
-}
-.color-primary-4 {
-	color: #0f2740;
-}
-
-.color-complement-0 {
-	color: #a4804b;
-} /* Main Complement color */
-.color-complement-1 {
-	color: #f1d6b0;
-}
-.color-complement-2 {
-	color: #c6a573;
-}
-.color-complement-3 {
-	color: #87632d;
-}
-.color-complement-4 {
-	color: #624111;
-}
-
 .header {
 	display: initial;
 	position: sticky;
-	z-index: 1;
+	z-index: 5;
 
 }
 .name {
@@ -42,21 +10,26 @@
 .title {
 	color: #a4804b;
 }
+
 .link:hover {
 	color: #f1d6b0;
 	background-color: #354f6b;
 }
+
 .link {
 	color: #354f6b;
 }
+
 .nav {
 	border-color: #624111;
 	position: sticky !important;
 	top: 0;
 }
+
 .image {
 	display: flex;
 	justify-content: space-evenly;
 	/* align-items: center;
 	margin-left:auto; */
 }
+ 
