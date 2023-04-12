@@ -1,4 +1,5 @@
 import Heading from "../UI/Heading";
+import classes from "./../../css/Languages.module.css"
 import languageLottieData from "./../../lotties/Language.json";
 import Lottie from "react-lottie";
 import englishLottieData from "../../lotties/EnglishFlag.json";
@@ -19,7 +20,7 @@ const Languages = () => {
 			<Heading lottieData={languageLottieData} content="Languages" />
 			<article className="cf avenir w-50 center">
 				<div className="fl w-100 w-50-ns tc">
-					<h2>
+					<p className={`f4 ${classes.language}`}>
 						<Lottie
 							speed={1}
 							height={100}
@@ -31,10 +32,10 @@ const Languages = () => {
 							}}
 						/>
 						English
-					</h2>
+					</p>
 				</div>
 				<div className="fl w-100 w-50-ns  tc">
-					<h2>
+					<p className={`f4 ${classes.language}`}>
 						<Lottie
 							height={100}
 							width={100}
@@ -44,7 +45,7 @@ const Languages = () => {
 							}}
 						/>
 						Afrikaans
-					</h2>
+					</p>
 				</div>
 			</article>
 		</>

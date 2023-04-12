@@ -16,7 +16,7 @@ const MobileAbout = () => {
 					title="Anthony Kruger"
 					alt="Anthony Kruger"
 				/>
-				<h1 className={"f2 " + classes.headingText}>About me</h1>
+				<h1 className={"f2 " + classes.headingText}>About Me</h1>
 				<hr className="mw3 bb bw1 b--black-10" />
 			</div>
 			<p
@@ -24,26 +24,18 @@ const MobileAbout = () => {
 					"lh-copy measure center tc f6 black-70 " + classes.paragraphText
 				}
 			>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Tellus in hac
-				habitasse platea dictumst vestibulum rhoncus est. Consequat mauris nunc
-				congue nisi vitae suscipit. Iaculis at erat pellentesque adipiscing.
-				Gravida dictum fusce ut placerat orci nulla. Turpis nunc eget lorem
-				dolor sed viverra.
+				Hello! I'm an ambitious and determined individual with a Bachelor's
+				degree in information technology. As a successful retail branch manager,
+				I've honed my management and sales skills, which will be valuable to my
+				future employer in information technology. I'm seeking a role that
+				leverages my interaction skills, operational experience, and positive
+				attitude. I'm highly motivated, a fast learner, and a collaborative team
+				player who thrives in dynamic and fast-paced environments. When not
+				coding, I'm exploring new technologies or enjoying my time with family and friends.
+				I'm excited about the opportunities ahead and look forward to connecting
+				with like-minded professionals.
 			</p>
-			{/* <p
-				className={
-					"lh-copy measure center tc f6 black-70 " + classes.paragraphText
-				}
-			>
-				As an accomplished Retail Branch manager my management skills and sales
-				experience will be of great value to my future employer. The ideal
-				opportunity would be where I can leverage my interaction skills,
-				operational experience, and positive attitude. It will also provide me
-				with the opportunity to enhance my creativity and acquire new skills
-				that will complement the knowledge and skills I have already acquired
-				through my degree and current work experience.
-			</p> */}
+			
 		</article>
 	);
 };

@@ -3,7 +3,9 @@ import image from "./../../media/AnthonyIllustrated.jpeg";
 
 const DesktopAbout = () => {
 	return (
-		<div className={ classes.slideRight + " avenir dt mw8 center pv4 pv5-m pv6-ns " + classes.desktop}>
+		<div
+			className={`avenir dt mw8 center pv4 pv5-m pv6-ns ${classes.desktop}`}
+		>
 			<div className={`dtc v-top ${classes.slideRight}`}>
 				<img
 					src={image}
@@ -12,15 +14,22 @@ const DesktopAbout = () => {
 				/>
 			</div>
 			<div className="dtc v-top pl5">
-				<h1 id="about" className={"f2 tc " + classes.headingText}>About me</h1>
+				<h1 id="about" className={"f2 tc " + classes.headingText}>
+					About Me
+				</h1>
 				<hr className="mw3 bb bw1 b--black-10" />
 				<p className={"lh-copy mv0 " + classes.paragraphText}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in
-					hac habitasse platea dictumst vestibulum rhoncus est. Consequat mauris
-					nunc congue nisi vitae suscipit. Iaculis at erat pellentesque
-					adipiscing. Gravida dictum fusce ut placerat orci nulla. Turpis nunc
-					eget lorem dolor sed viverra.
+					Hello! I'm an ambitious and determined individual with a Bachelor's
+					degree in information technology. As a successful retail branch
+					manager, I've honed my management and sales skills, which will be
+					valuable to my future employer in information technology. I'm seeking
+					a role that leverages my interaction skills, operational experience,
+					and positive attitude. I'm highly motivated, a fast learner, and a
+					collaborative team player who thrives in dynamic and fast-paced
+					environments. When not coding, I'm exploring new technologies or
+					enjoying my time with family and friends. I'm excited about the
+					opportunities ahead and look forward to connecting with like-minded
+					professionals.
 				</p>
 			</div>
 		</div>

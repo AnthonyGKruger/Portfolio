@@ -1,8 +1,10 @@
-.headingBorder {
+.headingContainer {
 	border-color: #624111;
+	/* position: relative !important; */
 }
 
 .headingText {
 	color: #624111;
 	/* color: #354f6b; */
 }
+ 

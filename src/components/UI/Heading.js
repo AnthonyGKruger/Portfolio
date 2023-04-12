@@ -23,22 +23,22 @@ const Heading = (props) => {
 				<h2>{props.content}</h2>
 			</div>
 		</>
-	);
+	); 
 
 	const desktopContent = (
-		<div className="w-20 center ">
-			<div className={`fl w-50 w-50-ns`}>
+		<div className="w-100 center ">
+			<div className={`fl w-50 w-50-ns pl7`}>
 				<Lottie height={100} width={100} options={defaultOptions} />
 			</div>
-			<div className={`fl w-50 w-50-ns f3  ${classes.headingText}`}>
+			<div className={`fl w-50 w-50-ns f3 pr7 ${classes.headingText}`}>
 				<h2>{props.content}</h2>
 			</div>
-		</div>
+		</div>	
 	);
 
 	return (
 		<article
-			className={`ml-50 w-100 cf avenir tc bt bb tc mw8 center mt4 bg-white pa3 ${classes.headingBorder} `}
+			className={`ml-50 w-100 cf avenir tc bt bb tc mw8 center mt4 bg-white pa3 ${classes.headingContainer} `}
 		>
 			{isMobile ? mobileContent : desktopContent}
 		</article>
