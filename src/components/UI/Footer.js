@@ -1,65 +1,68 @@
+import {Link} from "react-router-dom"
 import logo from "./../../media/ezdev-logo.png";
 import classes from "./../../css/Footer.module.css";
 
 const Footer = () => {
 	return (
-		<footer class="pa4 pa5-l black-70 bt b--black-10 avenir">
-			<div class="mb4-l cf">
-				<a href="/#title" className={classes.image}>
+		<footer className="pa4 pa5-l black-70 bt b--black-10 avenir">
+			<div className="mb4-l cf">
+				<Link to="/" className={classes.image}>
 					<img
 						src={logo}
 						alt="ez-dev logo"
 						height={100}
 						layout="filled"
 					/>
-				</a>
+				</Link>
 				<h1 className={`${classes.name} + tc mt2 mb0 fw1 f1`}>
 					Anthony Gordon Kruger
 				</h1>
 			</div>
 
-			<section class={`cf tc mb5`}>
-				<div class="mb4 mb0-ns w-100 fr">
-					<a
-						class={`black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l ${classes.email}`}
-						href="mailto:hello@ezdev.solutions"
+			<section className={`cf tc mb5`}>
+				<div className="mb4 mb0-ns w-100 fr">
+					<Link
+						className={`black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l ${classes.email}`}
+						to="mailto:hello@ezdev.solutions"
 					>
 						hello@ezdev.solutions
-					</a>
+					</Link>
 				</div>
 	
 			</section>
-			<div class="dt dt--fixed w-100">
-				<div class="dn dtc-ns v-mid">
-					<p class="f7 black-70 dib pr3 mb3">
+			<div className="dt dt--fixed w-100">
+				<div className="dn dtc-ns v-mid">
+					<p className="f7 black-70 dib pr3 mb3">
 						© EZdev Solutions (PTY) LTD 2023
 					</p>
 				</div>
-				<div class="db dtc-ns black-70 tc tr-ns v-mid">
-					<a
-						class="link near-black hover-silver dib h2 w2 mr3"
-						href="https://github.com/AnthonyGKruger"
+				<div className="db dtc-ns black-70 tc tr-ns v-mid">
+					<Link
+						className="link hover-silver dib h2 w2 mr3"
+						to="https://github.com/AnthonyGKruger"
 						title="GitHub"
+						target="_blank"
 					>
 						<svg
 							fill="currentColor"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 16 16"
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							stroke-linejoin="round"
-							stroke-miterlimit="1.414"
+							fillRule="evenodd"
+							clipRule="evenodd"
+							strokeLinejoin="round"
+							strokeMiterlimit="1.414"
 						>
 							<path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8" />
 						</svg>
-					</a>
-					<a
-						href="https://www.facebook.com/"
-						class="link dim dib mr3 black-70"
+					</Link>
+
+					{/* <Link
+						to="https://www.facebook.com/"
+						className="link dim dib mr3 black-70"
 						title="EZdev on Facebook"
 					>
 						<svg
-							class="db w2 h2"
+							className="db w2 h2"
 							data-icon="facebook"
 							viewBox="0 0 32 32"
 							fill="currentColor"
@@ -67,13 +70,14 @@ const Footer = () => {
 							<title>facebook icon</title>
 							<path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"></path>
 						</svg>
-					</a>
+					</Link> */}
 
-					<a
-						href="https://www.linkedin.com/company/"
-						class="link dim dib black-70"
+					<Link
+						to="https://www.linkedin.com/in/anthony-gordon-kruger-ezdev/"
+						className="link dim dib black-70"
+						target="_blank"
 					>
-						<svg class="db w2 h2" x="0px" y="0px" viewBox="0 0 48 48">
+						<svg className="db w2 h2" x="0px" y="0px" viewBox="0 0 48 48">
 							<linearGradient
 								gradientUnits="userSpaceOnUse"
 								x1="23.9995"
@@ -97,7 +101,7 @@ const Footer = () => {
 								</g>
 							</g>
 						</svg>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</footer>
