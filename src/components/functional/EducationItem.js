@@ -16,7 +16,7 @@ const EducationItem = ({
 	
 	const mappedComments = comments.map((comment) => {
 		return (
-			<div class={`f6 grow br2 ph3 pv2 mb2 mr2 dib ${classes.comments}`}>
+			<div key={comment} className={`f6 grow br2 ph3 pv2 mb2 mr2 dib ${classes.comments}`}>
 				{comment}
 			</div>
 		);
@@ -35,8 +35,8 @@ const EducationItem = ({
 				{`  ${institution}`}
 			</div>
 			<div className={`bb ${classes.detailsContainer}`}>
-				<div class={`cf pt3 ${classes.details}`}>
-					<div class="ph2 fl w-40 pv2">
+				<div className={`cf pt3 ${classes.details}`}>
+					<div className="ph2 fl w-40 pv2">
 						<img
 							style={{ width: "1rem" }}
 							src={scrollImage}
@@ -44,7 +44,7 @@ const EducationItem = ({
 						/>
 						{`  Qualification: ${qualification}`}
 					</div>
-					<div class="ph2 fl w-25 pv2">
+					<div className="ph2 fl w-25 pv2">
 						<img
 							style={{ width: "1rem" }}
 							src={calendarImage}
@@ -52,7 +52,7 @@ const EducationItem = ({
 						/>
 						{`  From: ${dateFrom}`}
 					</div>
-					<div class="ph2 fl w-25 pv2">
+					<div className="ph2 fl w-25 pv2">
 						<img
 							style={{ width: "1rem" }}
 							src={calendarImage}

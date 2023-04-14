@@ -17,7 +17,7 @@ const WorkItem = ({
 
 	const mappedComments = comments.map((comment) => {
 		return (
-			<div class={`f6 grow br2 ph3 pv2 mb2 mr2 dib ${classes.comments}`}>
+			<div key={comment} className={`f6 grow br2 ph3 pv2 mb2 mr2 dib ${classes.comments}`}>
 				{comment}
 			</div>
 		);
@@ -39,8 +39,8 @@ const WorkItem = ({
 
 			<div className={`bb ${classes.detailsContainer}`}>
 				
-        <div class={`cf pt1 ${classes.details}`}>
-					<div class="ph3 fl w-40 pv1">
+        <div className={`cf pt1 ${classes.details}`}>
+					<div className="ph3 fl w-40 pv1">
 						<img
 							style={{ width: "2rem" }}
 							src={roleImage}
@@ -48,7 +48,7 @@ const WorkItem = ({
 						/>
 						{`  Role: ${role}`}
 					</div>
-					<div class="ph2 fl w-25 pv3">
+					<div className="ph2 fl w-25 pv3">
 						<img
 							style={{ width: "1rem" }}
 							src={calendarImage}
@@ -56,7 +56,7 @@ const WorkItem = ({
 						/>
 						{`  From: ${dateFrom}`}
 					</div>
-					<div class="ph2 fl w-25 pv3">
+					<div className="ph2 fl w-25 pv3">
 						<img
 							style={{ width: "1rem" }}
 							src={calendarImage}
