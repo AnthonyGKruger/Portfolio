@@ -24,6 +24,7 @@
 	border-color: #624111;
 	position: sticky !important;
 	top: 0;
+	transition: all 2s ease-out;
 }
 
 .image {

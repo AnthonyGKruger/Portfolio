@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Header from "./components/UI/Header";
 import About from "./pages/About";
-// import Footer from "./components/UI/Footer";
 import Root from "./pages/Root";
 import ContactMe from "./pages/ContactMe";
 import Portfolio from "./pages/Portfolio";
 import Error from "./pages/Error";
+import Languages from "./pages/Languages";
+import Education from "./pages/Education";
+import WorkExperience from "./pages/WorkExperience";
+import Skills from "./pages/Skills";
 
 const router = createBrowserRouter([
 	{
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
 		element: <Root />,
 		children: [
 			{ index: true, path: "/", element: <About /> },
+			{ path: "skills", element: <Skills /> },
+			{ path: "languages", element: <Languages /> },
+			{ path: "education", element: <Education /> },
+			{ path: "work-experience", element: <WorkExperience /> },
 			{ path: "contact-me", element: <ContactMe /> },
 			{ path: "portfolio", element: <Portfolio /> },
 		],
@@ -21,16 +27,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-	return (
-		<RouterProvider router={router} />
-		// <>
-		// 	<Header />
-		// 	<main>
-		// 		<About />
-		// 	</main>
-		// 	<Footer />
-		// </>
-	);
+	return <RouterProvider router={router} />;
 };
 
 export default App;

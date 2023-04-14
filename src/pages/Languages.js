@@ -1,12 +1,11 @@
-import Heading from "../UI/Heading";
-import classes from "./../../css/Languages.module.css"
-import languageLottieData from "./../../lotties/Language.json";
+import Heading from "../components/UI/Heading";
+import classes from "./../css/Languages.module.css";
+import languageLottieData from "../lotties/Language.json";
 import Lottie from "react-lottie";
-import englishLottieData from "../../lotties/EnglishFlag.json";
-import afrikaansLottieData from "../../lotties/SouthAfricanFlag.json";
+import englishLottieData from "../lotties/EnglishFlag.json";
+import afrikaansLottieData from "../lotties/SouthAfricanFlag.json";
 
 const Languages = () => {
-	
 	const defaultOptions = {
 		loop: true,
 		autoplay: true,
