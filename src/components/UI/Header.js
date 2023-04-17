@@ -11,7 +11,7 @@ const Header = () => {
 	let navContent;
 
 	const defaultNavContent = (
-		<nav className={"bt bb tc mw8 center mt4 bg-white " + classes.nav}>
+		<nav className={"bt bb tc  center mt4 bg-white " + classes.nav}>
 			<NavLink className={linkClasses} to="/">
 				About
 			</NavLink>
@@ -25,7 +25,7 @@ const Header = () => {
 	);
 
 	const aboutNavContent = (
-		<nav className={"bt bb tc mw8 center mt4 bg-white " + classes.nav}>
+		<nav className={"bt bb tc center mt4 bg-white " + classes.nav}>
 			<NavLink className={linkClasses} to="/">
 				About
 			</NavLink>
@@ -35,8 +35,8 @@ const Header = () => {
 			<NavLink className={linkClasses} to="/languages">
 				Languages
 			</NavLink>
-			<NavLink className={linkClasses} to="/education">
-				Education
+			<NavLink className={linkClasses} to="/qualifications">
+				Qualifications
 			</NavLink>
 			<NavLink className={linkClasses} to="/work-experience">
 				Work Experience
@@ -54,7 +54,7 @@ const Header = () => {
 		case "/":
 		case "/skills":
 		case "/languages":
-		case "/education":
+		case "/qualifications":
 		case "/work-experience":
 			navContent = aboutNavContent;
 			break;

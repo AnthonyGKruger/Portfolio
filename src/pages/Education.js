@@ -44,7 +44,7 @@ const mappedEducation = educationData.map((qualification) => {
 const Education = () => {
 	return (
 		<>
-			<Heading content="Education" lottieData={lottieData} />
+			<Heading content="Qualifications" lottieData={lottieData} />
 			{mappedEducation}
 		</>
 	);

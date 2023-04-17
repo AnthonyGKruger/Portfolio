@@ -30,28 +30,28 @@ const Heading = (props) => {
 		</article>
 	);
 
-	let desktopContent = (
-		<div className="w-100 center ">
-			<div className={`fl w-50 w-50-ns pl7`}>
-				<Lottie height={100} width={100} options={defaultOptions} />
-			</div>
-			<div className={`fl w-50 w-50-ns f3 pr7 ${classes.headingText}`}>
-				<h2>{props.content}</h2>
-			</div>
-		</div>
-	);
+	let desktopContent;
 
 	switch (location.pathname) {
 		case "/skills":
 		case "/languages":
 		case "/education":
 		case "/work-experience":
+		case "/portfolio":
 			desktopContent = (
 				<article
 					className={`ml-50 w-100 cf avenir  tc mw8 center mt4 bg-white pa3 
 					`}
 				>
-					{desktopContent}
+					<div className="w-100 center ">
+						<div className={`fl w-50 w-50-ns pl7`}>
+							<Lottie height={100} width={100} options={defaultOptions} />
+						</div>
+						<div className={`fl w-50 w-50-ns f3 pr7 ${classes.headingText}`}>
+							<h2>{props.content}</h2>
+							<hr className="mw3 bb bw1 b--black-10" />
+						</div>
+					</div>
 				</article>
 			);
 			break;
@@ -61,7 +61,14 @@ const Heading = (props) => {
 				<article
 					className={`ml-50 w-100 cf avenir bt bb tc mw8 center mt4 bg-white pa3 ${classes.headingContainer} `}
 				>
-					{desktopContent}
+					<div className="w-100 center ">
+						<div className={`fl w-50 w-50-ns pl7`}>
+							<Lottie height={100} width={100} options={defaultOptions} />
+						</div>
+						<div className={`fl w-50 w-50-ns f3 pr7 ${classes.headingText}`}>
+							<h2>{props.content}</h2>
+						</div>
+					</div>
 				</article>
 			);
 	}
