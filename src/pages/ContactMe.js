@@ -1,10 +1,18 @@
 import Lottie from "react-lottie";
 import classes from "./../css/ContactMe.module.css";
 import lottieData from "./../lotties/ContactMe.json";
+import { useMediaQuery } from "react-responsive";
+import {Form, useNavigate} from "react-router-dom"
 
 const ContactMe = () => {
-	const sendContactDetailHandler = (event) => {
+	const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+	const navigate = useNavigate()
+
+	const sendContactDetailHandler = async (event) => {
 		event.preventDefault();
+
+		
+		navigate('/thank-you')
 	};
 
 	const defaultOptions = {
@@ -17,18 +25,39 @@ const ContactMe = () => {
 	};
 
 	return (
-		
-		<div class="dt w-100 center pt0 pb5 pv5-m pv6-ns">
-			<div class="db dtc-ns v-mid-ns">
-				<Lottie 
-				height={500} width={500}
-				 options={defaultOptions} />
+		<div class={`dt center pt0 pb5 pv5-m pv6-ns ${isMobile ? "w-75" : "w-100"}`}>
+			<div class={`db dtc-ns v-mid-ns ${isMobile ? "w-50" : "w-25"}`}>
+				<Lottie
+					height={isMobile ? 400 : 600}
+					width={isMobile ? 400 : 600}
+					options={defaultOptions}
+				/>
 			</div>
-			<div class="db dtc-ns v-mid ph2 pr0-ns pl3-ns">
+			<div
+				className={`db dtc-ns v-mid ph2 pr0-ns pl3-ns ${
+					isMobile ? "w-100" : "w-25"
+				}`}
+			>
 				<article className="lh-copy pa4 black-80 avenir">
-					<form acceptCharset="utf-8">
+					<Form onSubmit={sendContactDetailHandler} acceptCharset="utf-8">
 						<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 							<legend className="ph0 mh0 fw6 clip">Contact Me</legend>
+
+							<div className="mt3">
+								<label
+									className={`db fw4 lh-copy f6 ${classes.text}`}
+									for="name"
+								>
+									Name
+								</label>
+
+								<input
+									className="pa2 input-reset ba bg-transparent w-100 measure"
+									type="text"
+									name="name"
+									id="name"
+								/>
+							</div>
 
 							<div className="mt3">
 								<label
@@ -46,8 +75,24 @@ const ContactMe = () => {
 								/>
 							</div>
 
+							<div className="mt3">
+								<label
+									className={`db fw4 lh-copy f6 ${classes.text}`}
+									for="company"
+								>
+									Company  <span className="normal black-60">(optional)</span>
+								</label>
+
+								<input
+									className="pa2 input-reset ba bg-transparent w-100 measure"
+									type="text"
+									name="company"
+									id="company"
+								/>
+							</div>
+
 							<div>
-								<label for="comment" className={`f6 b db mt2 ${classes.text}`}>
+								<label for="comment" className={`f6 db mt2 ${classes.text}`}>
 									Comments <span className="normal black-60">(optional)</span>
 								</label>
 								<textarea
@@ -63,12 +108,11 @@ const ContactMe = () => {
 						<div className="mt3">
 							<input
 								className={`f6 grow br2 ph3 pv2 mb2 mr2 dib pointer input-reset ${classes.button}`}
-								type="button"
+								type="submit"
 								value="Send"
-								onClick={sendContactDetailHandler}
 							/>
 						</div>
-					</form>
+					</Form>
 				</article>
 			</div>
 		</div>

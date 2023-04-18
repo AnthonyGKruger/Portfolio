@@ -8,6 +8,7 @@ import Languages from "./pages/Languages";
 import Education from "./pages/Education";
 import WorkExperience from "./pages/WorkExperience";
 import Skills from "./pages/Skills";
+import ThankYou from "./pages/ThankYou";
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
 			{ path: "work-experience", element: <WorkExperience /> },
 			{ path: "contact-me", element: <ContactMe /> },
 			{ path: "portfolio", element: <Portfolio /> },
+			{ path: 'thank-you', element: <ThankYou/>}
 		],
 	},
 ]);
