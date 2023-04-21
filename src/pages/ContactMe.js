@@ -1,18 +1,40 @@
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Lottie from "react-lottie";
 import classes from "./../css/ContactMe.module.css";
 import lottieData from "./../lotties/ContactMe.json";
 import { useMediaQuery } from "react-responsive";
-import {Form, useNavigate} from "react-router-dom"
+import { Form, useNavigate } from "react-router-dom";
 
 const ContactMe = () => {
+	const form = useRef();
 	const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
-	const sendContactDetailHandler = async (event) => {
+	const [state, setState] = useState({ mailSent: false, error: null });
+
+	const inputChangeHandler = (event) => {
+		setState({ ...state, [event.target.name]: event.target.value });
+	};
+
+	const onSubmitHandler = (event) => {
 		event.preventDefault();
-
-		
-		navigate('/thank-you')
+		console.log(state);
+		emailjs
+			.sendForm(
+				"ezdev_smtp_service",
+				"ezdev_contact_me",
+				form.current,
+				"0PBBlj4pgSRIws7hs"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 	};
 
 	const defaultOptions = {
@@ -25,8 +47,10 @@ const ContactMe = () => {
 	};
 
 	return (
-		<div class={`dt center pt0 pb5 pv5-m pv6-ns ${isMobile ? "w-75" : "w-100"}`}>
-			<div class={`db dtc-ns v-mid-ns ${isMobile ? "w-50" : "w-25"}`}>
+		<div
+			className={`dt center pt0 pb5 pv5-m pv6-ns ${isMobile ? "w-75" : "w-100"}`}
+		>
+			<div className={`db dtc-ns v-mid-ns ${isMobile ? "w-50" : "w-25"}`}>
 				<Lottie
 					height={isMobile ? 400 : 600}
 					width={isMobile ? 400 : 600}
@@ -39,67 +63,80 @@ const ContactMe = () => {
 				}`}
 			>
 				<article className="lh-copy pa4 black-80 avenir">
-					<Form onSubmit={sendContactDetailHandler} acceptCharset="utf-8">
+					<Form
+						ref={form}
+						method="POST"
+						onSubmit={onSubmitHandler}
+						acceptCharset="utf-8"
+					>
 						<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 							<legend className="ph0 mh0 fw6 clip">Contact Me</legend>
 
 							<div className="mt3">
 								<label
 									className={`db fw4 lh-copy f6 ${classes.text}`}
-									for="name"
+									htmlFor="name"
 								>
 									Name
 								</label>
 
 								<input
+									value={state.from_name || ""}
 									className="pa2 input-reset ba bg-transparent w-100 measure"
 									type="text"
-									name="name"
+									name="from_name"
 									id="name"
+									onChange={inputChangeHandler}
 								/>
 							</div>
 
 							<div className="mt3">
 								<label
 									className={`db fw4 lh-copy f6 ${classes.text}`}
-									for="email-address"
+									htmlFor="email"
 								>
 									Email address
 								</label>
 
 								<input
+									value={state.reply_to || ""}
 									className="pa2 input-reset ba bg-transparent w-100 measure"
 									type="email"
-									name="email-address"
-									id="email-address"
+									name="reply_to"
+									id="email"
+									onChange={inputChangeHandler}
 								/>
 							</div>
 
 							<div className="mt3">
 								<label
 									className={`db fw4 lh-copy f6 ${classes.text}`}
-									for="company"
+									htmlFor="company"
 								>
-									Company  <span className="normal black-60">(optional)</span>
+									Company <span className="normal black-60">(optional)</span>
 								</label>
 
 								<input
+									value={state.company || ""}
 									className="pa2 input-reset ba bg-transparent w-100 measure"
 									type="text"
 									name="company"
 									id="company"
+									onChange={inputChangeHandler}
 								/>
 							</div>
 
 							<div>
-								<label for="comment" className={`f6 db mt2 ${classes.text}`}>
+								<label htmlFor="comment" className={`f6 db mt2 ${classes.text}`}>
 									Comments <span className="normal black-60">(optional)</span>
 								</label>
 								<textarea
-									id="comment"
-									name="comment"
+									value={state.comments || ""}
+									id="comments"
+									name="comments"
 									className="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"
-									ariaDescribedby="comment-desc"
+									aria-describedby="comment-desc"
+									onChange={inputChangeHandler}
 								></textarea>
 								<small id="comment-desc" className="f6 black-60"></small>
 							</div>
@@ -112,6 +149,13 @@ const ContactMe = () => {
 								value="Send"
 							/>
 						</div>
+						<div
+							className="g-recaptcha"
+							data-sitekey="6LebeaUlAAAAAHaSpJ--uIjwm5hpkl83lIYEHSDT"
+							data-action="LOGIN"
+						></div>
+						{/* <br /> */}
+						{/* <input type="submit" value="Submit"></input> */}
 					</Form>
 				</article>
 			</div>
