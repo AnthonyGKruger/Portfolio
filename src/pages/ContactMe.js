@@ -30,6 +30,7 @@ const ContactMe = () => {
 			.then(
 				(result) => {
 					console.log(result.text);
+					navigate("/thank-you");
 				},
 				(error) => {
 					console.log(error.text);
@@ -48,7 +49,9 @@ const ContactMe = () => {
 
 	return (
 		<div
-			className={`dt center pt0 pb5 pv5-m pv6-ns ${isMobile ? "w-75" : "w-100"}`}
+			className={`dt center pt0 pb5 pv5-m pv6-ns ${
+				isMobile ? "w-75" : "w-100"
+			}`}
 		>
 			<div className={`db dtc-ns v-mid-ns ${isMobile ? "w-50" : "w-25"}`}>
 				<Lottie
@@ -127,7 +130,10 @@ const ContactMe = () => {
 							</div>
 
 							<div>
-								<label htmlFor="comment" className={`f6 db mt2 ${classes.text}`}>
+								<label
+									htmlFor="comment"
+									className={`f6 db mt2 ${classes.text}`}
+								>
 									Comments <span className="normal black-60">(optional)</span>
 								</label>
 								<textarea
@@ -149,13 +155,6 @@ const ContactMe = () => {
 								value="Send"
 							/>
 						</div>
-						<div
-							className="g-recaptcha"
-							data-sitekey="6LebeaUlAAAAAHaSpJ--uIjwm5hpkl83lIYEHSDT"
-							data-action="LOGIN"
-						></div>
-						{/* <br /> */}
-						{/* <input type="submit" value="Submit"></input> */}
 					</Form>
 				</article>
 			</div>
