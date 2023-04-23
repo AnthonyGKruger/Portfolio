@@ -35,7 +35,7 @@ const Heading = (props) => {
 	switch (location.pathname) {
 		case "/skills":
 		case "/languages":
-		case "/education":
+		case "/qualifications":
 		case "/work-experience":
 		case "/portfolio":
 			desktopContent = (

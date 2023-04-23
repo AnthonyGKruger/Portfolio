@@ -6,3 +6,22 @@
 .text{
   color: #354F6B;
 }
+
+.inputError{
+  border-color: red;
+}
+
+.inputError:focus{
+  outline:none;
+  border-color: red;
+}
+
+.input:focus{
+  outline:  none;
+  border-color: #A4804B;
+}
+
+.input{
+  border-color:#0F2740;
+}
+

@@ -38,7 +38,7 @@ const Footer = () => {
 				</div>
 				<div className="db dtc-ns black-70 tc tr-ns v-mid">
 					<Link
-						className="link hover-silver dib h2 w2 mr3"
+						className="link hover-silver black-70 dib h2 w2 mr3"
 						to="https://github.com/AnthonyGKruger"
 						title="GitHub"
 						target="_blank"

@@ -11,9 +11,9 @@ const About = () => {
 			<DesktopAbout />
 			<MobileAbout />
 			<Skills />
-			<Languages />
 			<Education />
 			<WorkExperience />
+			<Languages />
 		</>
 	);
 };

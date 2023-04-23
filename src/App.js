@@ -16,14 +16,22 @@ const router = createBrowserRouter([
 		errorElement: <Error />,
 		element: <Root />,
 		children: [
-			{ index: true, path: "/", element: <About /> },
-			{ path: "skills", element: <Skills /> },
-			{ path: "languages", element: <Languages /> },
-			{ path: "qualifications", element: <Education /> },
-			{ path: "work-experience", element: <WorkExperience /> },
-			{ path: "contact-me", element: <ContactMe /> },
-			{ path: "portfolio", element: <Portfolio /> },
-			{ path: 'thank-you', element: <ThankYou/>}
+			{ index: true, path: "/", errorElement: <Error />, element: <About /> },
+			{ path: "skills", errorElement: <Error />, element: <Skills /> },
+			{ path: "languages", errorElement: <Error />, element: <Languages /> },
+			{
+				path: "qualifications",
+				errorElement: <Error />,
+				element: <Education />,
+			},
+			{
+				path: "work-experience",
+				errorElement: <Error />,
+				element: <WorkExperience />,
+			},
+			{ path: "contact-me", errorElement: <Error />, element: <ContactMe /> },
+			{ path: "portfolio", errorElement: <Error />, element: <Portfolio /> },
+			{ path: "thank-you", errorElement: <Error />, element: <ThankYou /> },
 		],
 	},
 ]);

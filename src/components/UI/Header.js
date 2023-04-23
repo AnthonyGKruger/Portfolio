@@ -4,7 +4,6 @@ import logo from "./../../media/ezdev-logo.png";
 import classes from "./../../css/Header.module.css";
 
 const Header = () => {
-	
 	const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 	const location = useLocation();
 	const linkClasses = `${classes.link} f6 f5-l link bg-animate black-80 dib pa3 ph4-l`;
@@ -32,14 +31,14 @@ const Header = () => {
 			<NavLink className={linkClasses} to="/skills">
 				Skills
 			</NavLink>
-			<NavLink className={linkClasses} to="/languages">
-				Languages
+			<NavLink className={linkClasses} to="/work-experience">
+				Work Experience
 			</NavLink>
 			<NavLink className={linkClasses} to="/qualifications">
 				Qualifications
 			</NavLink>
-			<NavLink className={linkClasses} to="/work-experience">
-				Work Experience
+			<NavLink className={linkClasses} to="/languages">
+				Languages
 			</NavLink>
 			<NavLink className={linkClasses} to="/portfolio">
 				Portfolio
@@ -75,7 +74,7 @@ const Header = () => {
 				<h2 className={`${classes.title} + mt2 mb0 f6 fw4 ttu tracked`}>
 					Software developer and tech enthusiast
 				</h2>
-				{isMobile? defaultNavContent: navContent}
+				{isMobile ? defaultNavContent : navContent}
 			</header>
 		</>
 	);
