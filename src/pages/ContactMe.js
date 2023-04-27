@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import Lottie from "react-lottie";
+import Lottie from "./../components/UI/Lottie";
 import Banner from "./../components/UI/Banner";
 import classes from "./../css/ContactMe.module.css";
-import lottieData from "./../lotties/ContactMe.json";
 import { useMediaQuery } from "react-responsive";
 import { Form, useNavigate } from "react-router-dom";
 import Loader from "../components/UI/Loader";
@@ -12,15 +11,6 @@ const ContactMe = () => {
 	const form = useRef();
 	const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
 	const navigate = useNavigate();
-
-	const defaultOptions = {
-		loop: true,
-		autoplay: true,
-		animationData: lottieData,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
-	};
 
 	const [state, setState] = useState({
 		mailSending: false,
@@ -36,7 +26,7 @@ const ContactMe = () => {
 
 	const validateEmail = (email) => {
 		const re =
-			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(String(email).toLowerCase());
 	};
 
@@ -73,25 +63,11 @@ const ContactMe = () => {
 					...prevState.inputHasError,
 					...input,
 				},
-				// formHasErrors: true,
 			};
 		});
 	};
 
 	const inputChangeHandler = (event) => {
-		// setState((prevState) => {
-		// 	return {
-		// 		...prevState,
-		// 		inputHasError: {
-		// 			nameHasError: false,
-		// 			emailHasError: false,
-		// 			companyHasError: false,
-		// 			commentsHasError: false,
-		// 		},
-		// 		formHasErrors: false,
-		// 	};
-		// });
-
 		const inputName = event.target.name;
 		const inputValue = event.target.value;
 
@@ -208,16 +184,14 @@ const ContactMe = () => {
 					content="There is an issue with your forms input fields, please check the marked fields."
 				/>
 			)}
-			<div
-				className={`dt center pt0 pb5 pv5-m pv6-ns ${
-					isMobile ? "w-75" : "w-100"
-				}`}
-			>
+			<div className={`dt center pv5-m pv3-ns ${isMobile ? "w-75" : "w-100"}`}>
 				<div className={`db dtc-ns v-mid-ns ${isMobile ? "w-50" : "w-25"}`}>
 					<Lottie
 						height={isMobile ? 300 : 600}
 						width={isMobile ? 300 : 600}
-						options={defaultOptions}
+						animationData={
+							"https://lottie.host/f892594d-0ecc-4bd5-b0e0-0dafc24cc7bd/Sf1sAY0f0p.json"
+						}
 					/>
 				</div>
 				<div

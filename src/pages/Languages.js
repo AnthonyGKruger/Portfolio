@@ -1,34 +1,25 @@
 import Heading from "../components/UI/Heading";
 import classes from "./../css/Languages.module.css";
-import languageLottieData from "../lotties/Language.json";
-import Lottie from "react-lottie";
-import englishLottieData from "../lotties/EnglishFlag.json";
-import afrikaansLottieData from "../lotties/SouthAfricanFlag.json";
+import Lottie from "./../components/UI/Lottie";
 
 const Languages = () => {
-	const defaultOptions = {
-		loop: true,
-		autoplay: true,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
-	};
+	const headingAnimationData =
+		"https://lottie.host/3e3b4494-4e85-42ca-8152-b158111155d8/RUNQSbxg3U.json";
+	const englishAnimationData =
+		"https://assets7.lottiefiles.com/datafiles/IUH3UberOD9dTWnyi7DhOvi0GtEyqp7eO02WKKve/uk.json";
+	const afrikaansAnimationData =
+		"https://assets1.lottiefiles.com/packages/lf20_JHXco0Wx21.json";
 
 	return (
 		<>
-			<Heading lottieData={languageLottieData} content="Languages" />
+			<Heading animationData={headingAnimationData} content="Languages" />
 			<article className="cf avenir w-50 center">
 				<div className="fl w-100 w-50-ns tc">
 					<p className={`f4 ${classes.language}`}>
 						<Lottie
-							speed={1}
 							height={100}
 							width={100}
-							options={{
-								...defaultOptions,
-								loop: true,
-								animationData: englishLottieData,
-							}}
+							animationData={englishAnimationData}
 						/>
 						English
 					</p>
@@ -38,10 +29,7 @@ const Languages = () => {
 						<Lottie
 							height={100}
 							width={100}
-							options={{
-								...defaultOptions,
-								animationData: afrikaansLottieData,
-							}}
+							animationData={afrikaansAnimationData}
 						/>
 						Afrikaans
 					</p>

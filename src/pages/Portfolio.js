@@ -2,9 +2,11 @@ import PortfolioItem from "../components/functional/PortfolioItem";
 import Heading from "./../components/UI/Heading"
 import mumbiLogo from "./../media/mumbi-logo.png"
 import dptsLogo from "./../media/DPTS.png"
-import lottieData from "./../lotties/Portfolio.json"
 
 const Portfolio = () => {
+
+	const animationData = "https://lottie.host/dc706d6a-e4a6-42bc-ba37-f7a808f759bf/RR21ET2flw.json"
+
 	const portfolioData = [
 		{
 			id: "p1",
@@ -34,7 +36,7 @@ const Portfolio = () => {
 		);
 	});
 	return <article>
-		<Heading lottieData={lottieData} content="Portfolio"/>
+		<Heading animationData={animationData} content="Portfolio"/>
 		<div class="cf pa2">{portfolioItems}</div></article>;
 };
 

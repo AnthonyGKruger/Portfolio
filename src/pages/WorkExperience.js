@@ -1,8 +1,10 @@
 import Heading from "./../components/UI/Heading";
 import WorkItem from "./../components/functional/WorkItem";
-import lottieData from "./../lotties/workExperience.json";
 
 const WorkExperience = () => {
+
+	const animationData = "https://lottie.host/a77f2f40-ec93-4bd1-86de-8eaeb95c1b22/Hqf4tNKkYW.json"
+
 	const workData = [
 		{
 			id: "w1",
@@ -42,7 +44,7 @@ const WorkExperience = () => {
 
 	return (
 		<>
-			<Heading lottieData={lottieData} content="Work Experience" />
+			<Heading animationData={animationData} content="Work Experience" />
 			{mappedWork}
 		</>
 	);

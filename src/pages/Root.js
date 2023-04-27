@@ -9,7 +9,7 @@ const Root = () => {
 	return (
 		<>
 			<Header />
-			<main className={location.path !== "/" ? "vh-auto mb6" : ""}>
+			<main className={location.path !== "/" ? "vh-auto mb5" : ""}>
 				<Banner
 					bgColor="bg-red"
 					content="This is website is currently being developed, some functionality may

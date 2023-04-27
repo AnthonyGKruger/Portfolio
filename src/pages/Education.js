@@ -1,5 +1,4 @@
 import Heading from "./../components/UI/Heading";
-import lottieData from "./../lotties/Education.json";
 import EducationItem from "./../components/functional/EducationItem";
 
 const educationData = [
@@ -28,6 +27,8 @@ const educationData = [
 	// },
 ];
 
+const animationData = "https://lottie.host/373b9689-1737-4678-aead-b3365f45c808/lJ8PjA8Ybj.json"
+
 const mappedEducation = educationData.map((qualification) => {
 	return (
 		<EducationItem
@@ -44,10 +45,10 @@ const mappedEducation = educationData.map((qualification) => {
 const Education = () => {
 	return (
 		<>
-			<Heading content="Qualifications" lottieData={lottieData} />
+			<Heading content="Qualifications" animationData={animationData} />
 			{mappedEducation}
 		</>
 	);
 };
 
-export default Education;
+export default Education; 
