@@ -68,10 +68,10 @@ const WorkItem = ({
 
 			</div>
 
-      <div className={`bb ${classes.detailsContainer}`}>
+      {summary && <div className={`bb ${classes.detailsContainer}`}>
         <p>Details:</p>
         <p>{summary}</p>
-      </div>
+      </div>}
 
 			<div className="pt3">{mappedComments}</div>
 

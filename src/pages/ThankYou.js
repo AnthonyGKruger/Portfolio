@@ -11,14 +11,14 @@ const ThankYou = () => {
 	return (
 		<>
 			<Lottie width={400} height={400} animationData={animationData} />
-			<article class="tc ph4 avenir">
+			<article className="tc ph4 avenir">
 				<h1
-					class={`${isMobile ? "f1" : "f2"} f2-m f1-l fw2  mv3 ${classes.text}`}
+					className={`${isMobile ? "f1" : "f2"} f2-m f1-l fw2  mv3 ${classes.text}`}
 				>
 					Awesome!
 				</h1>
 				<h2
-					class={`${isMobile ? "f3" : "f4"} f4-m f3-l fw2  mt0 lh-copy ${
+					className={`${isMobile ? "f3" : "f4"} f4-m f3-l fw2  mt0 lh-copy ${
 						classes.text
 					}`}
 				>

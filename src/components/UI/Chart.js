@@ -25,8 +25,8 @@ const Chart = () => {
 	if (isVisible) {
 		setTimeout(() => {
 			setSkills([
-				{ label: "React", value: 65 },
-				{ label: jsLabel, value: 60 },
+				{ label: "Reactjs", value: 65 },
+				{ label: jsLabel, value: 50 },
 				{ label: "HTML", value: 40 },
 				{ label: "CSS", value: 30 },
 				{ label: "PHP", value: 45 },

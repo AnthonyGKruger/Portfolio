@@ -2,28 +2,67 @@ import Heading from "./../components/UI/Heading";
 import WorkItem from "./../components/functional/WorkItem";
 
 const WorkExperience = () => {
-
-	const animationData = "https://lottie.host/a77f2f40-ec93-4bd1-86de-8eaeb95c1b22/Hqf4tNKkYW.json"
+	const animationData =
+		"https://lottie.host/a77f2f40-ec93-4bd1-86de-8eaeb95c1b22/Hqf4tNKkYW.json";
 
 	const workData = [
 		{
 			id: "w1",
-			company: "A Company",
-			role: "executive director",
+			company: "DPTS (PTY) LTD",
+			role: "Freelance Web Developer / Systems Administrator at DPTS pty ltd, International",
 			summary:
-				"Lorem ipsum dolor sit amet, meliore minimum percipitur ne per, eos lobortorquatos contentiones cu. Vero assum viris ne ius, ne mollis disputando mel. Ex senserit iracundia nec. Tale oblique mea id, exerci delenit no usu. Id vix cetero verear. Cu eum paulo platonem.Eum quem prodesset no, sit id tollit tamquam veritus. At vis novum dolorum. An usudolor habemus conclusionemque, mei ei mazim sententiae, diam commodo assentior melid. Et commune efficiendi ullamcorper eos, ad his atqui commodo.",
-			dateFrom: "January 2019",
-			dateTo: "December 2021",
-			comments: ["Trippled company Revenue 123", "diDd great work 123"],
+				"Responsible for leading a web development team that build dynamic websites and e-commerce stores for international clients of DPTS. This includes migration of code and parameters to the quality assurance and production environments. Also, further responsible for the administration and support of the cloud hosted environments on Microsoft Azure for DPTS and its’ clients for use as web and back-office servers for the e-commerce and CRM applications. This experience has allowed me to gain hands-on experience to complement the theoretical knowledge obtained as I completed my three-year bachelor’s degree in information technology.",
+			dateFrom: "November 2020",
+			dateTo: "December 2022",
+			comments: ["Trippled company Revenue 123", "did great work 123"],
 		},
 		{
 			id: "w2",
-			company: "PFS",
-			role: "executive director",
+			company: "The Lighting Warehouse: Menlyn & Centurion",
+			role: "Branch Manager",
 			summary:
-				"Lorem ipsum dolor sit amet, meliore minimum percipitur ne per, eos lobortorquatos contentiones cu. Vero assum viris ne ius, ne mollis disputando mel. Ex senserit iracundia nec. Tale oblique mea id, exerci delenit no usu. Id vix cetero verear. Cu eum paulo platonem.Eum quem prodesset no, sit id tollit tamquam veritus. At vis novum dolorum. An usudolor habemus conclusionemque, mei ei mazim sententiae, diam commodo assentior melid. Et commune efficiendi ullamcorper eos, ad his atqui commodo.",
-			dateFrom: "January 2019",
-			dateTo: "December 2021",
+				"Directing all operational aspects including distribution, customer service, human resources, administration and sales in accordance with the company’s objectives. Providing training, coaching, development and motivation for branch personnel. Developing forecasts and financial objectives.",
+			dateFrom: "June 2018",
+			dateTo: "Present",
+			comments: ["Trippled company revenue", "did great work"],
+		},
+		{
+			id: "w2",
+			company: "The Lighting Warehouse: Menlyn & Zambezi",
+			role: "Sales Manager",
+			summary:
+				null,
+			dateFrom: "August 2016",
+			dateTo: "May 2018",
+			comments: ["Trippled company revenue", "did great work"],
+		},
+		{
+			id: "w2",
+			company: "The Lighting Warehouse: Centurion",
+			role: "Sales Consultant",
+			summary:
+			null,
+			dateFrom: "June 2014",
+			dateTo: "July 2016",
+			comments: ["Trippled company revenue", "did great work"],
+		},
+		{
+			id: "w2",
+			company: "Precision Financial Services",
+			role: "Administrator",
+			summary:
+			null,
+			dateFrom: "January 2014",
+			dateTo: "April 2014",
+			comments: ["Trippled company revenue", "did great work"],
+		},
+		{
+			id: "w2",
+			company: "Bullion: The Gold Buying Company",
+			role: "Sales Representative",
+			summary: null,
+			dateFrom: "October 2013",
+			dateTo: "December 2013",
 			comments: ["Trippled company revenue", "did great work"],
 		},
 	];

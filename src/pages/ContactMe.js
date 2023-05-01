@@ -6,6 +6,7 @@ import classes from "./../css/ContactMe.module.css";
 import { useMediaQuery } from "react-responsive";
 import { Form, useNavigate } from "react-router-dom";
 import Loader from "../components/UI/Loader";
+import ResumeRequest from "../components/UI/ResumeRequest";
 
 const ContactMe = () => {
 	const form = useRef();
@@ -199,6 +200,7 @@ const ContactMe = () => {
 						isMobile ? "w-100" : "w-25"
 					}`}
 				>
+					
 					<article
 						className={`${isMobile ? "pa1" : "pa4"} lh-copy black-80 avenir`}
 					>
@@ -313,6 +315,7 @@ const ContactMe = () => {
 							{state.mailSending && <Loader />}
 						</Form>
 					</article>
+					<ResumeRequest/>
 				</div>
 			</div>
 		</>

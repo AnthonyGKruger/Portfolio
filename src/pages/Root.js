@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/UI/Header";
 import Footer from "../components/UI/Footer";
 import Banner from "../components/UI/Banner";
+import Companies from "../components/UI/Companies"
 
 const Root = () => {
 	const location = useLocation();
@@ -18,6 +19,7 @@ const Root = () => {
 				/>
 				<Outlet />
 			</main>
+			<Companies/>
 			<Footer />
 		</>
 	);
