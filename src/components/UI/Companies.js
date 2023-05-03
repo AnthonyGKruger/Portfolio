@@ -19,7 +19,7 @@ const Companies = () => {
 
 	const mappedCompanies = companies.map((company) => {
 		return (
-			<div  key={company.id} className={`fl tc pa4 ${isMobile ? "w-100" : "w-20"}`}>
+			<div  key={company.id} className={`fl tc  ${isMobile ? "w-100 ph5 pv4" : "w-20 pa4"}`}>
 				<img src={company.logo} alt={`${company.name} logo`} />
 			</div>
 		);
@@ -29,9 +29,9 @@ const Companies = () => {
 		<div className="cf avenir">
 			<article className="vh-25 dt w-100">
 				<div className="dtc v-mid tc ph3 ph4-l">
-					<h2 className={`f1 fw6 tc ${classes.text}`}>
+					<span className={`f1 fw6 tc ${classes.text}`}>
 						Companies that I have worked with!
-					</h2>
+					</span>
 				</div>
 			</article>
       {mappedCompanies}

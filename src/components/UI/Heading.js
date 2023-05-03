@@ -8,8 +8,6 @@ const Heading = (props) => {
 
 	const location = useLocation();
 
-	console.log(props.animationData)
-
 	const mobileContent = (
 		<article
 			className={`ml-50 w-100 cf avenir tc bt bb tc mw8 center mt4 bg-white pa3 ${classes.headingContainer} `}

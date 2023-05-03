@@ -10,7 +10,7 @@ const ResumeRequest = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className={`${isMobile ? "ph1" : "ph2"} avenir`}>
+		<div className={`${isMobile ? "ph1" : "ph4"} avenir`}>
 			<h2 className={`f4 ${classes.text}`}>Want to skip through all of this? Download my resume below:</h2>
 			<a href={AnthonyResume} download="Anthony_Gordon_Kruger_Resume">
 				<button className={`f6 grow br2 ph3 pv2 mb2 mr2 dib pointer input-reset ${classes.button}`}onClick={() => navigate("/")}>Download Resume</button>

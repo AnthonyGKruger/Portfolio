@@ -12,7 +12,7 @@ const Portfolio = () => {
 			id: "p1",
 			title: "Mumbi Trust Administrators",
 			description: "SPA for Mumbi Trust Administrators.",
-			link: "https://ez-dev.co.za",
+			link: "https://mumbi.ezdev.solutions",
 			image: mumbiLogo,
 		},
 		{
@@ -37,7 +37,7 @@ const Portfolio = () => {
 	});
 	return <article>
 		<Heading animationData={animationData} content="Portfolio"/>
-		<div class="cf pa2">{portfolioItems}</div></article>;
+		<div className="cf pa2">{portfolioItems}</div></article>;
 };
 
 export default Portfolio;
