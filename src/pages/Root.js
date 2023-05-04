@@ -10,7 +10,7 @@ const Root = () => {
 
 	return (
 		<>
-			<RouteChangeTracker />
+			<RouteChangeTracker/>
 			<Header />
 			<main className={location.path !== "/" ? "vh-auto mb5" : ""}>
 				<Banner

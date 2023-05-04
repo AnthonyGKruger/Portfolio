@@ -1,17 +1,17 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import ReactGA from "react-ga4";
 
-const RouteChangeTracker = ({ history }) => {
+ const RouteChangeTracker = () => {
   
-  const TRACKING_ID = "G-WF8ZLTQFYL";
-	ReactGA.initialize([{trackingId: TRACKING_ID}]);
+  const location = useLocation();
 
-	const location = useLocation();
-	console.log(location);
-
-  ReactGA.send({ hitType: "pageview", page: location.pathname });
-
-  return;
+  useEffect(() => {
+    window.gtag("event", "page_view", {
+      page_path: location.pathname + location.search + location.hash,
+      page_search: location.search,
+      page_hash: location.hash,
+    });
+  }, [location]);
 };
 
 export default RouteChangeTracker;

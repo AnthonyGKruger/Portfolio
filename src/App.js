@@ -10,7 +10,6 @@ import WorkExperience from "./pages/WorkExperience";
 import Skills from "./pages/Skills";
 import ThankYou from "./pages/ThankYou";
 
-
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -39,9 +38,8 @@ const router = createBrowserRouter([
 
 const App = () => {
 	return (
-		<>
 			<RouterProvider router={router} />
-		</>
+	
 	);
 };
 
