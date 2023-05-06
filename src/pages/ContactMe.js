@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import Lottie from "./../components/UI/Lottie";
 import Banner from "./../components/UI/Banner";
 import classes from "./../css/ContactMe.module.css";
@@ -7,182 +7,102 @@ import { useMediaQuery } from "react-responsive";
 import { Form, useNavigate } from "react-router-dom";
 import Loader from "../components/UI/Loader";
 import ResumeRequest from "../components/UI/ResumeRequest";
+import { useDispatch, useSelector } from "react-redux";
+import { contactMeActions } from "../store/contactMe-slice";
 
 const ContactMe = () => {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const contactFormState = useSelector((state) => state.contactMe);
+
 	const form = useRef();
 	const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
-	const navigate = useNavigate();
-
-	const [state, setState] = useState({
-		mailSending: false,
-		error: false,
-		inputHasError: {
-			nameHasError: false,
-			emailHasError: false,
-			companyHasError: false,
-			commentsHasError: false,
-		},
-		formHasErrors: false,
-	});
-
-	const validateEmail = (email) => {
-		const re =
-			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(String(email).toLowerCase());
-	};
-
-	const validateName = (str) => {
-		const nameRegex = /^[a-zA-Z]+( [a-zA-Z]+)*$/;
-		return nameRegex.test(str);
-	};
-
-	const validateString = (str) => {
-		let regex = /^[a-zA-Z0-9\s]+$/;
-		return regex.test(str);
-	};
-
-	const changeMailIsSendingState = () => {
-		setState((prevState) => {
-			return {
-				...prevState,
-				mailSending: !prevState.mailSending,
-			};
-		});
-	};
-
-	const setError = () => {
-		setState((prevState) => {
-			return { ...prevState, error: true };
-		});
-	};
-
-	const inputHasErrorHandler = (input) => {
-		setState((prevState) => {
-			return {
-				...prevState,
-				inputHasError: {
-					...prevState.inputHasError,
-					...input,
-				},
-			};
-		});
-	};
-
-	const inputChangeHandler = (event) => {
-		const inputName = event.target.name;
-		const inputValue = event.target.value;
-
-		switch (inputName) {
-			case "from_name":
-				if (!validateName(inputValue.trim())) {
-					inputHasErrorHandler({ nameHasError: true });
-				} else {
-					setState((prevState) => {
-						return {
-							...prevState,
-							inputHasError: {
-								nameHasError: false,
-							},
-						};
-					});
-				}
-				break;
-			case "reply_to":
-				if (!validateEmail(inputValue)) {
-					inputHasErrorHandler({ emailHasError: true });
-				} else {
-					setState((prevState) => {
-						return {
-							...prevState,
-							inputHasError: {
-								emailHasError: false,
-							},
-						};
-					});
-				}
-				break;
-			case "company":
-				if (!validateString(inputValue)) {
-					inputHasErrorHandler({ companyHasError: true });
-				}
-				break;
-			case "comments":
-				if (!validateString(inputValue)) {
-					inputHasErrorHandler({ commentsHasError: true });
-				}
-				break;
-			default:
-				return;
-		}
-
-		setState((prevState) => {
-			return {
-				...prevState,
-				[inputName]: inputValue,
-				error: false,
-			};
-		});
-
-		state.inputHasError.nameHasError ||
-		state.inputHasError.emailHasError ||
-		state.inputHasError.companyHasError ||
-		state.inputHasError.commentsHasError
-			? setState((prevState) => {
-					return { ...prevState, formHasErrors: true };
-			  })
-			: setState((prevState) => {
-					return { ...prevState, formHasErrors: false };
-			  });
-	};
 
 	const onSubmitHandler = (event) => {
-		event.preventDefault();
 
-		if (!state.formHasErrors && state.from_name && state.reply_to) {
-			changeMailIsSendingState();
+		event.preventDefault();
+		
+		dispatch(contactMeActions.errorHandler({ isError: false }));
+
+		const formData = {
+			from_name: form.current.from_name.value,
+			company: form.current.company.value,
+			comments: form.current.comments.value,
+			reply_to: form.current.reply_to.value,
+		};
+
+		if (
+			!contactFormState.formHasErrors &&
+			contactFormState.from_name &&
+			contactFormState.reply_to
+		) {
+			dispatch(
+				contactMeActions.mailIsSendingStateHandler({ isMailSending: true })
+			);
 
 			emailjs
-				.sendForm(
+				.send(
 					"ezdev_smtp_service",
 					"ezdev_contact_me",
-					form.current,
+					formData,
 					"0PBBlj4pgSRIws7hs"
 				)
 				.then(
 					(result) => {
-						changeMailIsSendingState();
 						console.log(result.text);
-						console.log(state);
+						dispatch(
+							contactMeActions.mailIsSendingStateHandler({
+								isMailSending: false,
+							})
+						);
 						navigate("/thank-you");
 					},
 					(error) => {
-						changeMailIsSendingState();
-						setError();
+						dispatch(contactMeActions.errorHandler({ isError: true }));
 						console.log(error.text);
-						console.log(state);
+						dispatch(
+							contactMeActions.mailIsSendingStateHandler({
+								isMailSending: false,
+							})
+						);
 					}
 				);
+		} else if (
+			contactFormState.from_name === "" ||
+			contactFormState.inputHasError.nameHasError ||
+			contactFormState.reply_to === "" ||
+			contactFormState.inputHasError.emailHasError
+		) {
+			dispatch(contactMeActions.formErrorHandler({ formHasErrors: true }));
+
 		} else {
-			setState((prevState) => {
-				return { ...prevState, formHasErrors: true };
-			});
+			dispatch(contactMeActions.formErrorHandler({ formHasErrors: true }));
 		}
+	};
+
+	const inputChangeHandler = (event) => {
+		dispatch(
+			contactMeActions.inputChangeHandler({
+				value: event.target.value,
+				name: event.target.name,
+			})
+		);
 	};
 
 	return (
 		<>
-			{state.error && (
+			{contactFormState.error && (
 				<Banner
 					bgColor="bg-light-red"
 					textColor="white"
 					content="An error occurred, please try again."
 				/>
 			)}
-			{state.formHasErrors && (
+			{contactFormState.formHasErrors && (
 				<Banner
 					bgColor="bg-light-red"
 					textColor="white"
-					content="There is an issue with your forms input fields, please check the marked fields."
+					content="There is an issue with your forms input fields, please check whether all fields are valid.."
 				/>
 			)}
 			<div className={`dt center pv5-m pv3-ns ${isMobile ? "w-75" : "w-100"}`}>
@@ -200,7 +120,6 @@ const ContactMe = () => {
 						isMobile ? "w-100" : "w-25"
 					}`}
 				>
-					
 					<article
 						className={`${isMobile ? "pa1" : "pa4"} lh-copy black-80 avenir`}
 					>
@@ -210,7 +129,7 @@ const ContactMe = () => {
 							onSubmit={onSubmitHandler}
 							acceptCharset="utf-8"
 						>
-							<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+							<fieldset id="contact_me" className="ba b--transparent ph0 mh0">
 								<legend className="ph0 mh0 fw6 clip">Contact Me</legend>
 
 								<div className="mt3">
@@ -222,9 +141,9 @@ const ContactMe = () => {
 									</label>
 
 									<input
-										value={state.from_name || ""}
+										// value={contactFormState.from_name}
 										className={`pa2 input-reset ba br2 w-100 measure  ${
-											state.inputHasError.nameHasError
+											contactFormState.inputHasError.nameHasError
 												? classes.inputError
 												: classes.input
 										}`}
@@ -244,9 +163,9 @@ const ContactMe = () => {
 									</label>
 
 									<input
-										value={state.reply_to || ""}
+										value={contactFormState.reply_to || ""}
 										className={`pa2 input-reset ba br2 w-100 measure ${
-											state.inputHasError.emailHasError
+											contactFormState.inputHasError.emailHasError
 												? classes.inputError
 												: classes.input
 										}`}
@@ -266,9 +185,9 @@ const ContactMe = () => {
 									</label>
 
 									<input
-										value={state.company || ""}
+										value={contactFormState.company || ""}
 										className={`pa2 input-reset ba br2 w-100 measure  ${
-											state.inputHasError.companyHasError
+											contactFormState.inputHasError.companyHasError
 												? classes.inputError
 												: classes.input
 										}`}
@@ -287,11 +206,11 @@ const ContactMe = () => {
 										Comments <span className="normal black-60">(optional)</span>
 									</label>
 									<textarea
-										value={state.comments || ""}
+										value={contactFormState.comments || ""}
 										id="comments"
 										name="comments"
 										className={`pa2 input-reset ba br2 w-100 measure db border-box hover-black ba mb2 ${
-											state.inputHasError.commentsHasError
+											contactFormState.inputHasError.commentsHasError
 												? classes.inputError
 												: classes.input
 										}`}
@@ -302,7 +221,7 @@ const ContactMe = () => {
 								</div>
 							</fieldset>
 
-							{!state.mailSending && (
+							{!contactFormState.mailSending && (
 								<div className="mt3">
 									<input
 										className={`f6 grow br2 ph3 pv2 mb2 mr2 dib pointer input-reset ${classes.button}`}
@@ -312,10 +231,10 @@ const ContactMe = () => {
 								</div>
 							)}
 
-							{state.mailSending && <Loader />}
+							{contactFormState.mailSending && <Loader />}
 						</Form>
 					</article>
-					<ResumeRequest/>
+					<ResumeRequest />
 				</div>
 			</div>
 		</>
