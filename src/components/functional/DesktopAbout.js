@@ -4,7 +4,7 @@ import image from "./../../media/AnthonyIllustrated.jpeg";
 const DesktopAbout = () => {
 	return (
 		<div
-			className={`avenir dt mw8 center pv4 pv5-m pv6-ns ${classes.desktop}`}
+			className={`avenir dt mw8 center ph4 pv4 pv5-m pv6-ns ${classes.desktop}`}
 		>
 			<div className={`dtc v-top ${classes.slideRight}`}>
 				<img

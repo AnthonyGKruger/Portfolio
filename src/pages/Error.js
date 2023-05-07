@@ -21,9 +21,9 @@ const Error = () => {
 						height={lottieHeight}
 						animationData={animationData}
 					/>
-					<h2 className="tc f1-l fw1">
+					<span className="tc f1-l fw1">
 						Sorry, we can't find the page you are looking for.
-					</h2>
+					</span>
 				</header>
 				<p className="fw1 i tc mt4 mt5-l f4 f3-l">
 					Try using the navigation above to find the page you are looking for.
