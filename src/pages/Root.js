@@ -15,7 +15,7 @@ const Root = () => {
 			<main className={location.path !== "/" ? "vh-auto mb5" : ""}>
 				<Banner
 					bgColor="bg-red"
-					content="This is website is currently being developed, some functionality may
+					content="This website is currently being developed, some functionality may
 					not work as expected!"
 					textColor="white"
 				/>

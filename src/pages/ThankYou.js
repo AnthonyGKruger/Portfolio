@@ -12,19 +12,19 @@ const ThankYou = () => {
 		<>
 			<Lottie width={400} height={400} animationData={animationData} />
 			<article className="tc ph4 avenir">
-				<h1
+				<p
 					className={`${isMobile ? "f1" : "f2"} f2-m f1-l fw2  mv3 ${classes.text}`}
 				>
 					Awesome!
-				</h1>
-				<h2
+				</p>
+				<p
 					className={`${isMobile ? "f3" : "f4"} f4-m f3-l fw2  mt0 lh-copy ${
 						classes.text
 					}`}
 				>
 					Thank you for contacting me, I will get back to you shortly...In the
 					meantime, why not carry on looking around?.
-				</h2>
+				</p>
 			</article>
 		</>
 	);
